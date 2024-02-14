@@ -4,7 +4,7 @@ const app = express()
 const productlistRouter = require("./routes/productRoute")
 const userRouter = require("./routes/userRoute")
 const cors = require("cors")
-app.use(cors)
+app.use(cors())
 app.use(express.json())
 // database
 const connectDB = require("./db/connect")
