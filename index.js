@@ -4,6 +4,7 @@ const app = express()
 const productlistRouter = require("./routes/productRoute")
 const userRouter = require("./routes/userRoute")
 const cors = require("cors")
+const multer=require('multer')
 app.use(cors())
 app.use(express.json())
 // database
@@ -24,6 +25,16 @@ const start = async () => {
     console.log(error)
   }
 }
+const storage=multer.diskStorage({
+  destination:"uploads",filename:(req,file,cb)=>{
+    console.log("fil"+file.originalname);
+    cb(null,file.originalname);
+  }
+  });
+  const upload=multer({  storage:storage})
+  app.get("/",(req,res)=>{
+    res.send("upload file")
+  })
 start()
 
 // app.listen(port, (req,res)=>{

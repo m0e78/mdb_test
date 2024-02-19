@@ -12,6 +12,9 @@ const productlist= mongoose.Schema({
     series_number:{
         type:Number,
         // unique:true
+    },
+    imageUrl:{
+        type:String
     }
 })
 module.exports=mongoose.model('product', productlist)
