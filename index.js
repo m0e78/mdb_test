@@ -25,16 +25,7 @@ const start = async () => {
     console.log(error)
   }
 }
-const storage=multer.diskStorage({
-  destination:"uploads",filename:(req,file,cb)=>{
-    console.log("fil"+file.originalname);
-    cb(null,file.originalname);
-  }
-  });
-  const upload=multer({  storage:storage})
-  app.get("/",(req,res)=>{
-    res.send("upload file")
-  })
+
 start()
 
 // app.listen(port, (req,res)=>{

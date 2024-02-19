@@ -5,6 +5,7 @@ const validateToken=require('../middleware/validateTokenHandler')
 router.route('/register').post(registerUser)
 router.route('/login').post(login)
 router.route('/current').get(validateToken,currentUser)
+
 module.exports=router
 
 
